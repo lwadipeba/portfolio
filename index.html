@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lame Wadipeba | Portfolio</title>
+<style>
+:root{
+  --navy:#193552;--blue:#487fb7;--blue2:#7da8d2;--pale:#eef6fd;
+  --soft:#f8fbff;--line:#d8e6f3;--muted:#62788d;--white:#fff;
+  --shadow:0 16px 45px rgba(38,83,125,.10)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--soft);color:var(--navy);font-family:Arial,sans-serif;line-height:1.6}
+button,a{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+nav{
+  position:sticky;top:0;z-index:30;display:flex;align-items:center;
+  justify-content:space-between;padding:17px 6vw;background:rgba(248,251,255,.94);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(15px)
+}
+.logo{border:0;background:none;font:700 20px Georgia,serif;color:var(--navy)}
+.navlinks{display:flex;gap:25px}
+.navlinks button{border:0;background:none;color:var(--muted)}
+.page{display:none}.page.active{display:block}
+.wrap{width:min(1120px,88vw);margin:auto}
+.hero{
+  padding:90px 0 82px;background:
+  radial-gradient(circle at 82% 25%,rgba(125,168,210,.22),transparent 27%),
+  linear-gradient(180deg,#f7fbff,#fff)
+}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:55px;align-items:center}
+.eyebrow{margin:0 0 14px;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.12}
+h1{margin:0;font-size:clamp(49px,7vw,83px);letter-spacing:-.05em}
+h2{margin:0;font-size:clamp(34px,5vw,52px);letter-spacing:-.035em}
+h3{margin:0;font-size:24px}
+.intro{max-width:760px;color:var(--muted);font-size:20px}
+.headshot{
+  width:155px;height:184px;object-fit:cover;object-position:center top;
+  border-radius:80px 80px 22px 22px;border:7px solid white;box-shadow:var(--shadow)
+}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;
+  border:1px solid var(--line);border-radius:999px;background:white;color:var(--blue);
+  font-weight:700;text-decoration:none
+}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:white}
+.btn:hover{transform:translateY(-2px)}
+section{padding:82px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+.section-head p{max-width:470px;color:var(--muted)}
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  min-height:315px;display:flex;flex-direction:column;padding:29px;border:1px solid var(--line);
+  border-radius:24px;background:white;box-shadow:0 9px 30px rgba(38,83,125,.06);transition:.25s
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card h3{margin:25px 0 8px;font-size:30px}
+.card p{color:var(--muted)}
+.number{color:#84a2c0;font:italic 15px Georgia,serif}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 23px}
+.tag{padding:6px 10px;border-radius:999px;background:var(--pale);color:var(--blue);font-size:12px}
+.open{margin-top:auto;align-self:flex-start;border:0;background:none;padding:0;color:var(--blue);font-weight:700}
+.split{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
+.split p{color:var(--muted);font-size:17px}
+.resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+.resume-box{padding:30px;border:1px solid var(--line);border-radius:23px;background:white}
+.resume-item{padding:19px 0;border-bottom:1px solid var(--line)}
+.resume-item:last-child{border:0}
+.resume-item p{margin:7px 0;color:var(--muted)}
+.skill-list{display:flex;flex-wrap:wrap;gap:10px}
+.skill-list span{padding:9px 13px;border-radius:12px;background:var(--pale);color:var(--blue)}
+.contact{padding:55px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(135deg,#e7f2fc,#fff)}
+footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid var(--line)}
+/* project pages */
+.case-hero{padding:65px 0;background:linear-gradient(180deg,#eaf4fc,#f8fbff);border-bottom:1px solid var(--line)}
+.case-hero h1{font-size:clamp(48px,7vw,78px)}
+.back{border:0;background:none;padding:0;margin-bottom:45px;color:var(--blue);font-weight:700}
+.summary{max-width:820px;color:var(--muted);font-size:20px}
+.meta{display:flex;flex-wrap:wrap;gap:30px;margin-top:30px;padding-top:25px;border-top:1px solid #cbddec}
+.meta span{display:block;color:var(--muted);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+.project-section{padding:70px 0}
+.project-section.alt{background:#f0f7fd}
+.project-section p,.project-section li{color:var(--muted)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.stat{padding:23px;border:1px solid var(--line);border-radius:19px;background:white}
+.stat strong{display:block;color:var(--blue);font:700 34px Georgia,serif}
+.stat small{color:var(--muted)}
+.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:30px}
+.info{padding:26px;border:1px solid var(--line);border-radius:20px;background:white}
+.info h3{margin-bottom:10px}
+.chart-card{padding:28px;margin-top:28px;border:1px solid var(--line);border-radius:22px;background:white}
+.bars{display:grid;gap:13px;margin-top:20px}
+.bar-row{display:grid;grid-template-columns:155px 1fr 55px;gap:12px;align-items:center}
+.track{height:12px;border-radius:999px;background:#e8f0f7;overflow:hidden}
+.fill{height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--blue),var(--blue2))}
+.two-charts{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:25px}
+.cols{height:230px;display:flex;align-items:end;justify-content:space-around;gap:16px;padding:25px 10px 0;border-bottom:1px solid var(--line)}
+.col{width:48px;border-radius:9px 9px 0 0;background:linear-gradient(180deg,var(--blue2),var(--blue));position:relative}
+.col span{position:absolute;top:-27px;width:100%;text-align:center;font-size:12px;font-weight:700}
+.col small{position:absolute;bottom:-27px;width:100%;text-align:center;color:var(--muted)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);margin-top:30px}
+.phase{position:relative;padding:23px;border-top:2px solid #aac7e2}
+.phase:before{content:"";position:absolute;top:-7px;left:23px;width:12px;height:12px;border-radius:50%;background:var(--blue)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:30px}
+.slide{min-height:180px;padding:22px;border:1px solid var(--line);border-radius:19px;background:white}
+.slide b{display:block;margin-bottom:12px;color:var(--blue)}
+.docs{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.callout{padding:25px;margin-top:25px;border-left:4px solid var(--blue);border-radius:0 18px 18px 0;background:var(--pale);font:italic 21px Georgia,serif}
+.rule{padding:21px;margin-top:24px;border:1px solid #bad3e9;border-radius:18px;background:var(--pale);color:var(--blue)}
+@media(max-width:800px){
+  .hero-grid,.split,.resume-grid,.projects,.two-charts{grid-template-columns:1fr}
+  .headshot{width:130px;height:155px}
+  .stat-grid,.three-grid,.timeline,.gallery{grid-template-columns:1fr 1fr}
+  .section-head{align-items:start;flex-direction:column}
+}
+@media(max-width:520px){
+  .wrap{width:91vw}.navlinks{display:none}.stat-grid,.three-grid,.timeline,.gallery{grid-template-columns:1fr}
+  .bar-row{grid-template-columns:110px 1fr 45px}.contact{padding:30px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <button class="logo" onclick="showPage('home')">Lame Wadipeba</button>
+  <div class="navlinks">
+    <button onclick="goHome('work')">Work</button>
+    <button onclick="goHome('about')">About</button>
+    <button onclick="goHome('experience')">Experience</button>
+    <button onclick="goHome('contact')">Contact</button>
+  </div>
+</nav>
+
+<main id="home" class="page active">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Business Analytics · Data · Strategy</p>
+      <h1>Lame Wadipeba</h1>
+      <p class="intro">
+        I’m a business analytics and data professional with experience in client engagement,
+        storytelling, marketing and customer experience. My work begins with curiosity:
+        understanding people, uncovering the story within the data and turning that insight
+        into a solution people can use. I’m especially passionate about data-driven problem
+        solving, workflow automation and consumer insights.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#work">Explore my work</a>
+        <a class="btn" href="mailto:wadipeba@usc.edu">Email me</a>
+      </div>
+    </div>
+    <img class="headshot" alt="Headshot of Lame Wadipeba"
+      src="data:image/jpeg;base64,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">
+  </div>
+</section>
+
+<section id="work">
+<div class="wrap">
+  <div class="section-head">
+    <div><p class="eyebrow">Selected projects</p><h2>Explore my work</h2></div>
+    <p>Analytics, research and product projects designed to turn complex information into practical decisions.</p>
+  </div>
+  <div class="projects">
+    <article class="card"><span class="number">01</span><h3>Brief Byte</h3>
+      <p>An AI-powered newsletter and RSS summarizer that creates customizable five-to-ten-minute briefings.</p>
+      <div class="tags"><span class="tag">NLP</span><span class="tag">Python</span><span class="tag">Streamlit</span></div>
+      <button class="open" onclick="showPage('briefbyte')">View project →</button>
+    </article>
+    <article class="card"><span class="number">02</span><h3>Determinants of Happiness</h3>
+      <p>An econometric study of the financial, social and institutional factors associated with national happiness.</p>
+      <div class="tags"><span class="tag">Regression</span><span class="tag">Python</span><span class="tag">Economics</span></div>
+      <button class="open" onclick="showPage('happiness')">View project →</button>
+    </article>
+    <article class="card"><span class="number">03</span><h3>Waymo vs Uber</h3>
+      <p>A data-driven investigation of autonomous ride-hailing viability across price, wait time, safety and experience.</p>
+      <div class="tags"><span class="tag">Consumer Research</span><span class="tag">Visualization</span><span class="tag">Mobility</span></div>
+      <button class="open" onclick="showPage('waymo')">View project →</button>
+    </article>
+    <article class="card"><span class="number">04</span><h3>Pangaea</h3>
+      <p>An AI student operating system built for an AI case competition to turn scattered signals into a clear next step.</p>
+      <div class="tags"><span class="tag">AI Product</span><span class="tag">Prototype</span><span class="tag">Experimentation</span></div>
+      <button class="open" onclick="showPage('pangaea')">View project →</button>
+    </article>
+    <article class="card"><span class="number">05</span><h3>DealCheck</h3>
+      <p>An AI brand-deal manager helping independent creators evaluate a partnership’s value, workload and audience fit.</p>
+      <div class="tags"><span class="tag">AI Product Strategy</span><span class="tag">Creator Economy</span><span class="tag">UX Research</span></div>
+      <button class="open" onclick="showPage('dealcheck')">View project →</button>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="about" style="background:#fff">
+<div class="wrap split">
+  <div><p class="eyebrow">About me</p><h2>Curious about people. Precise with data.</h2></div>
+  <div>
+    <p>My work sits at the intersection of analytics, product thinking and communication. I enjoy finding the story inside complex information, building practical tools and translating analysis into decisions people can act on.</p>
+    <p>My experience across client engagement, marketing and customer experience helps me approach data with both technical rigor and an understanding of the people behind it.</p>
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="wrap">
+  <div class="section-head"><div><p class="eyebrow">Background</p><h2>Experience & education</h2></div></div>
+  <div class="resume-grid">
+    <div class="resume-box">
+      <h3>Experience</h3>
+      <div class="resume-item"><strong>Remote Nano Insights · Summer Data Intern</strong><p>Analyzed more than 50,000 IoT data points, helped reduce workflow time by 30%, supported a model reaching 92% accuracy and developed five Tableau dashboards.</p></div>
+      <div class="resume-item"><strong>Extern × PwC · Consulting Intern</strong><p>Used SQL and donor segmentation to identify a $20,000 funding gap and inform partnership recommendations.</p></div>
+      <div class="resume-item"><strong>USC OWN IT · Marketing Director</strong><p>Developed audience-focused campaigns and helped double engagement through clearer messaging and digital strategy.</p></div>
+    </div>
+    <div class="resume-box">
+      <h3>Education</h3>
+      <div class="resume-item"><strong>USC Marshall School of Business</strong><p>MS in Business Analytics, STEM · Expected May 2028</p></div>
+      <div class="resume-item"><strong>USC Dornsife College</strong><p>BS in Economics and Data Science · Minor in AI Applications · May 2026</p><p>Top Achiever Scholarship · Dean’s List</p></div>
+      <h3 style="margin:28px 0 15px">Skills</h3>
+      <div class="skill-list"><span>Python</span><span>R</span><span>SQL</span><span>PySpark</span><span>Tableau</span><span>Power BI</span><span>Regression</span><span>Time Series</span><span>NLP</span><span>Neural Networks</span></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="wrap"><div class="contact">
+  <p class="eyebrow">Let’s connect</p><h2>Let’s connect.</h2>
+  <div class="actions">
+    <a class="btn primary" href="mailto:wadipeba@usc.edu">wadipeba@usc.edu</a>
+    <a class="btn" target="_blank" href="https://www.linkedin.com/in/lame-wadipeba/">LinkedIn ↗</a>
+  </div>
+</div></div>
+</section>
+</main>
+
+<!-- BRIEF BYTE -->
+<main id="briefbyte" class="page">
+<section class="case-hero"><div class="wrap">
+<button class="back" onclick="goHome('work')">← Back to portfolio</button>
+<p class="eyebrow">AI · NLP · Product Development</p><h1>Brief Byte</h1>
+<p class="summary">An AI-powered briefing tool designed to help people stay informed without becoming overwhelmed by the volume of daily news and newsletters.</p>
+<div class="meta"><div><span>Team</span><strong>Seven members</strong></div><div><span>Tools</span><strong>Python, Streamlit, Hugging Face</strong></div><div><span>Output</span><strong>5–10 minute briefings</strong></div></div>
+</div></section>
+<section class="project-section"><div class="wrap split"><div><p class="eyebrow">The challenge</p><h2>Useful information is often buried beneath volume.</h2></div><div><p>Brief Byte brings multiple newsletter and RSS sources into one experience, identifies relevant content and produces a concise briefing based on the reader’s interests and available time.</p><p>The product was designed with traceability in mind. Users retain access to the original source links and the system includes an extractive fallback when a generative summary is unavailable.</p></div></div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">How it works</p><h2>From many sources to one useful briefing</h2>
+<div class="three-grid">
+<div class="info"><h3>1. Collect</h3><p>Ingest articles from selected newsletters and RSS sources.</p></div>
+<div class="info"><h3>2. Rank</h3><p>Use TF-IDF and cosine similarity to match content with reader interests.</p></div>
+<div class="info"><h3>3. Summarize</h3><p>Use DistilBART with an extractive fallback to create a time-controlled briefing.</p></div>
+</div>
+<div class="stat-grid"><div class="stat"><strong>5–10</strong><small>minute briefing options</small></div><div class="stat"><strong>7</strong><small>team members</small></div><div class="stat"><strong>2</strong><small>summary approaches</small></div><div class="stat"><strong>1</strong><small>streamlined reading experience</small></div></div>
+</div></section>
+<section class="project-section"><div class="wrap"><button class="btn" onclick="goHome('work')">← Back to all projects</button></div></section>
+</main>
+
+<!-- HAPPINESS -->
+<main id="happiness" class="page">
+<section class="case-hero"><div class="wrap">
+<button class="back" onclick="goHome('work')">← Back to portfolio</button>
+<p class="eyebrow">Econometrics · Regression · Python</p><h1>Determinants of Happiness</h1>
+<p class="summary">A study of the economic, social and institutional factors associated with national happiness using data from 137 countries in the 2023 World Happiness Report.</p>
+<div class="meta"><div><span>Dataset</span><strong>137 countries</strong></div><div><span>Method</span><strong>OLS regression</strong></div><div><span>Expanded model</span><strong>84.6% R²</strong></div></div>
+<div class="docs"><a class="btn primary" target="_blank" href="https://github.com/lwadipeba/World-Happiness-Report">GitHub ↗</a><a class="btn" target="_blank" href="https://github.com/lwadipeba/World-Happiness-Report">Access slides</a><a class="btn" target="_blank" href="https://github.com/lwadipeba/World-Happiness-Report">Read paper</a></div>
+</div></section>
+<section class="project-section"><div class="wrap split"><div><p class="eyebrow">Research question</p><h2>What explains why some countries are happier than others?</h2></div><div><p>The project began by testing GDP as a single predictor, then expanded the model to account for social support, healthy life expectancy, freedom, generosity, corruption perceptions and regional differences.</p><p>The results suggest that financial resources matter, but the quality of people’s social and institutional environments provides substantial additional explanatory power.</p></div></div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Model comparison</p><h2>The broader model explains substantially more variation.</h2>
+<div class="two-charts">
+<div class="chart-card"><h3>GDP-only model</h3><div class="cols"><div class="col" style="height:61.5%"><span>61.5%</span><small>R²</small></div></div></div>
+<div class="chart-card"><h3>Expanded model</h3><div class="cols"><div class="col" style="height:84.6%"><span>84.6%</span><small>R²</small></div></div></div>
+</div>
+<div class="chart-card"><h3>Relative coefficient estimates</h3><div class="bars">
+<div class="bar-row"><span>Freedom</span><div class="track"><div class="fill" style="width:100%"></div></div><b>1.80</b></div>
+<div class="bar-row"><span>Social support</span><div class="track"><div class="fill" style="width:74%"></div></div><b>1.34</b></div>
+<div class="bar-row"><span>Lower corruption</span><div class="track"><div class="fill" style="width:62%"></div></div><b>1.11</b></div>
+<div class="bar-row"><span>Generosity</span><div class="track"><div class="fill" style="width:38%"></div></div><b>0.68</b></div>
+<div class="bar-row"><span>Life expectancy</span><div class="track"><div class="fill" style="width:38%"></div></div><b>0.68</b></div>
+<div class="bar-row"><span>GDP</span><div class="track"><div class="fill" style="width:34%"></div></div><b>0.61</b></div>
+</div></div>
+</div></section>
+<section class="project-section"><div class="wrap">
+<p class="eyebrow">Methodology</p><h2>Analysis process</h2>
+<div class="three-grid">
+<div class="info"><h3>Prepare</h3><p>Cleaned the 2023 dataset, reviewed missing values and standardized variable interpretation.</p></div>
+<div class="info"><h3>Model</h3><p>Estimated a GDP-only baseline and an expanded multivariable model with regional controls.</p></div>
+<div class="info"><h3>Evaluate</h3><p>Compared explanatory power, coefficient direction and model assumptions.</p></div>
+</div>
+<div class="callout">The findings identify associations rather than causal effects. Country-level averages may also conceal important differences within countries.</div>
+<div class="docs"><a class="btn primary" target="_blank" href="https://github.com/lwadipeba/World-Happiness-Report">View complete project ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
+</div></section>
+</main>
+
+<!-- WAYMO -->
+<main id="waymo" class="page">
+<section class="case-hero"><div class="wrap">
+<button class="back" onclick="goHome('work')">← Back to portfolio</button>
+<p class="eyebrow">Consumer Insights · Mobility · Data Visualization</p><h1>Waymo vs Uber</h1>
+<p class="summary">After repeatedly using and loving Waymo, I wanted to look beyond the novelty and investigate whether autonomous ride-hailing could be a genuinely viable alternative to Uber.</p>
+<div class="meta"><div><span>Comparison</span><strong>Price and wait time</strong></div><div><span>Safety records</span><strong>814 reports reviewed</strong></div><div><span>Routes</span><strong>10 Los Angeles trips</strong></div></div>
+<div class="docs"><a class="btn primary" target="_blank" href="https://github.com/lwadipeba/Waymo-v-Uber">GitHub ↗</a><a class="btn" target="_blank" href="https://github.com/lwadipeba/Waymo-v-Uber/blob/main/Waymo%20vs%20Uber.pdf">Read actual paper ↗</a></div>
+</div></section>
+<section class="project-section"><div class="wrap split"><div><p class="eyebrow">The question</p><h2>Does a better ride experience translate into a viable service?</h2></div><div><p>I compared Waymo and Uber across price, wait time, route performance and safety. The analysis shows a meaningful tradeoff: Waymo was less expensive on average, while Uber offered much shorter and more consistent wait times.</p><p>The project also examined incident reports carefully, separating the growth in total reports from injury severity and geographic concentration.</p></div></div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Price and convenience</p><h2>Waymo cost less, but riders waited longer.</h2>
+<div class="two-charts">
+<div class="chart-card"><h3>Average trip price</h3><div class="cols"><div class="col" style="height:71%"><span>$30.57</span><small>Waymo</small></div><div class="col" style="height:80%"><span>$34.40</span><small>Uber</small></div></div><p>Uber was approximately 11% more expensive on average.</p></div>
+<div class="chart-card"><h3>Average wait time</h3><div class="cols"><div class="col" style="height:87%"><span>8.68</span><small>Waymo</small></div><div class="col" style="height:31%"><span>3.09</span><small>Uber</small></div></div><p>Average minutes from request to pickup.</p></div>
+</div>
+<div class="stat-grid"><div class="stat"><strong>$12.25</strong><small>Waymo minimum</small></div><div class="stat"><strong>$65.04</strong><small>Waymo maximum</small></div><div class="stat"><strong>$8.78</strong><small>Uber minimum</small></div><div class="stat"><strong>$72.93</strong><small>Uber maximum</small></div></div>
+</div></section>
+<section class="project-section"><div class="wrap">
+<p class="eyebrow">Safety appendix</p><h2>Incident reports rose as service expanded.</h2>
+<div class="chart-card"><h3>Waymo incident reports by year</h3><div class="bars">
+<div class="bar-row"><span>2021</span><div class="track"><div class="fill" style="width:12%"></div></div><b>38</b></div>
+<div class="bar-row"><span>2022</span><div class="track"><div class="fill" style="width:23%"></div></div><b>76</b></div>
+<div class="bar-row"><span>2023</span><div class="track"><div class="fill" style="width:34%"></div></div><b>111</b></div>
+<div class="bar-row"><span>2024</span><div class="track"><div class="fill" style="width:100%"></div></div><b>329</b></div>
+<div class="bar-row"><span>2025</span><div class="track"><div class="fill" style="width:79%"></div></div><b>260</b></div>
+</div></div>
+<div class="two-charts">
+<div class="chart-card"><h3>Reports by state</h3><div class="bars">
+<div class="bar-row"><span>California</span><div class="track"><div class="fill" style="width:100%"></div></div><b>566</b></div>
+<div class="bar-row"><span>Arizona</span><div class="track"><div class="fill" style="width:35%"></div></div><b>199</b></div>
+<div class="bar-row"><span>Texas</span><div class="track"><div class="fill" style="width:7%"></div></div><b>40</b></div>
+<div class="bar-row"><span>Georgia</span><div class="track"><div class="fill" style="width:2%"></div></div><b>8</b></div>
+<div class="bar-row"><span>DC</span><div class="track"><div class="fill" style="width:1%"></div></div><b>1</b></div>
+</div></div>
+<div class="chart-card"><h3>Reported injury outcomes</h3><div class="stat-grid" style="grid-template-columns:1fr 1fr"><div class="stat"><strong>784</strong><small>No injuries</small></div><div class="stat"><strong>26</strong><small>Minor injuries</small></div><div class="stat"><strong>2</strong><small>Moderate injuries</small></div><div class="stat"><strong>2</strong><small>Unknown</small></div></div></div>
+</div>
+<div class="callout">Report counts do not measure incident rates without a reliable exposure denominator such as miles driven or completed trips.</div>
+</div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Route appendix</p><h2>Los Angeles comparison routes</h2>
+<div class="gallery">
+<div class="slide"><b>R1</b>Culver City Steps to Walt Disney Concert Hall</div><div class="slide"><b>R2</b>Culver City Steps to Santa Monica Pier</div>
+<div class="slide"><b>R3</b>UCLA to Hollywood Walk of Fame</div><div class="slide"><b>R4</b>UCLA to USC Hotel</div>
+<div class="slide"><b>R5</b>Santa Monica Pier to Kia Forum</div><div class="slide"><b>R6</b>Santa Monica Pier to UCLA</div>
+<div class="slide"><b>R7</b>Kia Forum to USC Hotel</div><div class="slide"><b>R8</b>USC Hotel to Walt Disney Concert Hall</div>
+<div class="slide"><b>R9</b>Hollywood Walk of Fame to Kia Forum</div><div class="slide"><b>R10</b>Hollywood Walk of Fame to Walt Disney Concert Hall</div>
+</div>
+<div class="docs"><a class="btn primary" target="_blank" href="https://github.com/lwadipeba/Waymo-v-Uber/blob/main/Waymo%20vs%20Uber.pdf">Read paper ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
+</div></section>
+</main>
+
+<!-- PANGAEA -->
+<main id="pangaea" class="page">
+<section class="case-hero"><div class="wrap">
+<button class="back" onclick="goHome('work')">← Back to portfolio</button>
+<p class="eyebrow">AI Case Competition 2026 · Team C-6cess</p><h1>Pangaea</h1>
+<p class="summary">A unified AI workspace for USC MSBA students that transforms fragmented academic, career and personal signals into one clear next step.</p>
+<div class="meta"><div><span>Product</span><strong>AI student operating system</strong></div><div><span>Pilot</span><strong>Six weeks</strong></div><div><span>Core outcome</span><strong>On-time completion</strong></div></div>
+<div class="docs"><a class="btn primary" target="_blank" href="https://pangaea-music.vercel.app/home">Open prototype ↗</a><a class="btn" href="#pangaea-slides">Explore slides</a></div>
+</div></section>
+<section class="project-section"><div class="wrap split"><div><p class="eyebrow">The student story</p><h2>Tommy has everything he needs, but it lives in too many places.</h2></div><div><p>A reading response sits in the LMS. A problem set deadline is buried in a syllabus. A recruiter email needs a response. A case competition registration is closing. Pangaea brings these signals together, removes duplicates and recommends the most useful next action.</p><div class="callout">Every signal. One clear next step.</div></div></div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Directional research</p><h2>Students wanted help prioritizing, not another place to check.</h2>
+<div class="stat-grid"><div class="stat"><strong>68%</strong><small>unsure what to do next several times a week</small></div><div class="stat"><strong>72%</strong><small>dissatisfied with current organization systems</small></div><div class="stat"><strong>80%</strong><small>want prioritized academic deadlines</small></div><div class="stat"><strong>80%+</strong><small>check numerous platforms</small></div></div>
+<p style="font-size:12px">Small directional student cohort; results guide the pilot rather than represent the full student population.</p>
+<div class="three-grid" style="grid-template-columns:repeat(4,1fr)">
+<div class="info"><h3>Important Mail</h3><p>Surfaces messages that require action.</p></div><div class="info"><h3>Academics</h3><p>Prioritizes deadlines and workload.</p></div><div class="info"><h3>Career</h3><p>Tracks recruiting and networking actions.</p></div><div class="info"><h3>Personal</h3><p>Protects personal commitments and availability.</p></div>
+</div>
+</div></section>
+<section class="project-section"><div class="wrap">
+<p class="eyebrow">AI workflow</p><h2>From fragmented information to one recommendation</h2>
+<div class="timeline"><div class="phase"><h3>Extract</h3><p>Read approved email, LMS, calendar and document sources.</p></div><div class="phase"><h3>Understand</h3><p>Clean, connect and remove duplicate signals.</p></div><div class="phase"><h3>Prioritize</h3><p>Consider deadlines, workload, availability and career relevance.</p></div><div class="phase"><h3>Act</h3><p>Recommend one next step with supporting context.</p></div></div>
+<div class="callout">The six-week analysis uses a baseline week, four live weeks and a final readout. The proposed evaluation uses intention-to-treat and difference-in-differences.</div>
+</div></section>
+<section id="pangaea-slides" class="project-section alt"><div class="wrap">
+<p class="eyebrow">Presentation</p><h2>Slide overview</h2>
+<div class="gallery">
+<div class="slide"><b>01 · The problem</b>Student life is fragmented across many systems.</div><div class="slide"><b>02 · Tommy’s day</b>Deadlines and opportunities compete for attention.</div>
+<div class="slide"><b>03 · Research</b>Students struggle to identify what to do next.</div><div class="slide"><b>04 · Product</b>Pangaea becomes a unified AI workspace.</div>
+<div class="slide"><b>05 · Modules</b>Mail, academics, career and personal priorities.</div><div class="slide"><b>06 · AI workflow</b>Extract, understand, prioritize and act.</div>
+<div class="slide"><b>07 · Prototype</b>A dashboard centered on the next best action.</div><div class="slide"><b>08 · Pilot</b>Measure completion, organization time and adoption.</div>
+<div class="slide"><b>09 · Analysis</b>Six-week controlled evaluation with clear guardrails.</div><div class="slide"><b>10 · Roadmap</b>Prototype, pilot, trusted integrations and expansion.</div>
+</div>
+<div class="rule"><strong>Guardrails:</strong> opt-in, read-only access and privacy protection. Scale only if on-time completion improves without increasing stress or alert fatigue.</div>
+<div class="docs"><a class="btn primary" target="_blank" href="https://pangaea-music.vercel.app/home">Open prototype ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
+</div></section>
+</main>
+
+<!-- DEALCHECK -->
+<main id="dealcheck" class="page">
+<section class="case-hero"><div class="wrap">
+<button class="back" onclick="goHome('work')">← Back to portfolio</button>
+<p class="eyebrow">AI Product Case Competition · The Fourth Dimension</p><h1>DealCheck</h1>
+<p class="summary">An AI brand-deal manager that helps independent influencers understand what they will earn, what they must deliver and what they might risk before accepting a partnership.</p>
+<div class="meta"><div><span>Team</span><strong>Lame Wadipeba, Helen Li, Leo Liu, Joshya Gupta</strong></div><div><span>Audience</span><strong>Independent creators</strong></div><div><span>Output</span><strong>Brand Deal Health Report</strong></div></div>
+<div class="docs"><a class="btn primary" target="_blank" href="https://deal-cheque.lovable.app">Open prototype ↗</a></div>
+</div></section>
+<section class="project-section"><div class="wrap split"><div><p class="eyebrow">The opportunity</p><h2>The headline fee hides the real cost.</h2></div><div><p>Independent creators make business decisions using information scattered across contracts, email, calendars, financial records and social analytics. Production expenses, unlimited revisions, exclusivity, broad usage rights and payment delays can materially change a deal’s true value.</p><p>DealCheck connects this information and helps creators decide whether to accept, negotiate or decline an offer.</p><div class="callout">The business intelligence of a manager before creators can afford one.</div></div></div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Evidence</p><h2>Creators face financial, capacity and audience pressure.</h2>
+<div class="stat-grid"><div class="stat"><strong>67%</strong><small>earned under $10,000 annually from content creation</small></div><div class="stat"><strong>48%</strong><small>reported receiving late payments</small></div><div class="stat"><strong>78%</strong><small>said burnout affects motivation</small></div><div class="stat"><strong>42%</strong><small>reported audience-brand tension</small></div></div>
+<p style="font-size:12px">Sources represent separate CreatorIQ, Lumanu and Patreon/NewtonX populations and are not pooled.</p>
+</div></section>
+<section class="project-section"><div class="wrap">
+<p class="eyebrow">Product framework</p><h2>Three connected assessments</h2>
+<div class="three-grid">
+<div class="info"><h3>Financial Fit</h3><p>Extracts compensation, expenses, payment timing and rights, then estimates effective hourly compensation.</p></div>
+<div class="info"><h3>Schedule Fit</h3><p>Compares campaign obligations with available production capacity, deadlines and revision buffers.</p></div>
+<div class="info"><h3>Brand & Audience Fit</h3><p>Checks alignment with the creator’s values, audience, competitor restrictions and creative freedom.</p></div>
+</div>
+<div class="chart-card"><h3>Brand Deal Health Report</h3><p>Every report includes contract evidence, missing information, confidence indicators, prioritized negotiation points and an editable response.</p><div class="three-grid" style="grid-template-columns:repeat(4,1fr)">
+<div class="info" style="background:#e8f3ed"><h3>Green</h3><p>Strong Fit</p></div><div class="info" style="background:#fff5db"><h3>Yellow</h3><p>Clarify</p></div><div class="info" style="background:#fde9dc"><h3>Orange</h3><p>Negotiate</p></div><div class="info" style="background:#f7dfe3"><h3>Red</h3><p>Decline or Seek Review</p></div>
+</div></div>
+<div class="rule"><strong>Product rule:</strong> Missing critical information prevents a Green recommendation. A strong fee cannot outweigh an impossible deadline or prohibited brand category. Financial urgency remains separate from deal quality.</div>
+</div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Proposed pilot</p><h2>Test speed without sacrificing understanding.</h2>
+<div class="stat-grid"><div class="stat"><strong>≥80%</strong><small>informed reviews within ten minutes</small></div><div class="stat"><strong>≥50%</strong><small>median review-time reduction</small></div><div class="stat"><strong>≥95%</strong><small>critical-field extraction accuracy</small></div><div class="stat"><strong>≥90%</strong><small>recall of expert-labelled material risks</small></div></div>
+<div class="timeline"><div class="phase"><small>Weeks 1–2</small><h3>Interview</h3><p>Validate recurring creator problems.</p></div><div class="phase"><small>Weeks 3–4</small><h3>Compare</h3><p>Test unaided review, general AI and DealCheck.</p></div><div class="phase"><small>Weeks 5–8</small><h3>Build & QA</h3><p>Develop extraction and three-fit assessments.</p></div><div class="phase"><small>Weeks 9–12</small><h3>Beta</h3><p>Test with 25 creators and target 50 reviews.</p></div></div>
+<p style="font-size:12px">These are proposed product hypotheses, not current performance claims. A 25-person beta provides directional rather than population-level evidence.</p>
+</div></section>
+<section class="project-section"><div class="wrap">
+<div class="contact"><p class="eyebrow">Interactive prototype</p><h2>Explore DealCheck</h2><p>Follow the journey from uploading an offer to reviewing financial, schedule and audience-fit recommendations.</p><div class="actions"><a class="btn primary" target="_blank" href="https://deal-cheque.lovable.app">Open prototype ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div></div>
+</div></section>
+</main>
+
+<footer>© 2026 Lame Wadipeba</footer>
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goHome(section){
+  showPage('home');
+  setTimeout(()=>document.getElementById(section)?.scrollIntoView({behavior:'smooth'}),100);
+}
+</script>
+</body>
+</html>
