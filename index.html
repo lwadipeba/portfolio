@@ -134,8 +134,6 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
 .whr-dot.muted{background:#8da0b1}
 .whr-note{font-size:13px;color:var(--muted)}
 .whr-conclusion{padding:28px;border-left:4px solid var(--blue);border-radius:0 18px 18px 0;background:var(--pale)}
-@media(max-width:800px){.whr-data-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.whr-data-grid{grid-template-columns:1fr}.whr-fit-row{grid-template-columns:112px 1fr 58px;gap:9px}.whr-fit-value{font-size:17px}.whr-fit-chart{padding:18px}}
 @media(max-width:800px){
   .hero-grid,.split,.resume-grid,.projects,.two-charts{grid-template-columns:1fr}
   .stat-grid,.three-grid,.timeline,.gallery{grid-template-columns:1fr 1fr}
@@ -267,7 +265,23 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
 <button class="back" onclick="goHome('work')">← Back to portfolio</button>
 <p class="eyebrow">AI · NLP · Product Development</p><h1>Brief Byte</h1>
 <p class="summary">An AI-powered briefing tool designed to help people stay informed without becoming overwhelmed by the volume of daily news and newsletters.</p>
-<div class<!-- HAPPINESS -->
+<div class="meta"><div><span>Team</span><strong>Seven members</strong></div><div><span>Tools</span><strong>Python, Streamlit, Hugging Face</strong></div><div><span>Output</span><strong>5–10 minute briefings</strong></div></div>
+<div class="docs"><a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://github.com/LincolnLam1112/Newsletter-Summarizer/tree/main">View project on GitHub ↗</a></div>
+</div></section>
+<section class="project-section"><div class="wrap split"><div><p class="eyebrow">The challenge</p><h2>Useful information is often buried beneath volume.</h2></div><div><p>Brief Byte brings multiple newsletter and RSS sources into one experience, identifies relevant content and produces a concise briefing based on the reader’s interests and available time.</p><p>The product was designed with traceability in mind. Users retain access to the original source links and the system includes an extractive fallback when a generative summary is unavailable.</p></div></div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">How it works</p><h2>From many sources to one useful briefing</h2>
+<div class="three-grid">
+<div class="info"><h3>1. Collect</h3><p>Ingest articles from selected newsletters and RSS sources.</p></div>
+<div class="info"><h3>2. Rank</h3><p>Use TF-IDF and cosine similarity to match content with reader interests.</p></div>
+<div class="info"><h3>3. Summarize</h3><p>Use DistilBART with an extractive fallback to create a time-controlled briefing.</p></div>
+</div>
+<div class="stat-grid"><div class="stat"><strong>5–10</strong><small>minute briefing options</small></div><div class="stat"><strong>7</strong><small>team members</small></div><div class="stat"><strong>2</strong><small>summary approaches</small></div><div class="stat"><strong>1</strong><small>streamlined reading experience</small></div></div>
+</div></section>
+<section class="project-section"><div class="wrap"><button class="btn" onclick="goHome('work')">← Back to all projects</button></div></section>
+</main>
+
+<!-- HAPPINESS -->
 <main id="happiness" class="page">
 <section class="case-hero"><div class="wrap">
 <button class="back" onclick="goHome('work')">← Back to portfolio</button>
@@ -358,30 +372,6 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
 <div class="split"><div><p>The results support a broader view of national well-being. GDP matters in the analysis, but social support and freedom also carry independent positive associations. Because the study is observational, these estimates describe relationships across countries rather than the effect of a specific policy change.</p><p>The coefficients are country-level estimates. They cannot explain why one individual is happier than another, and country averages can hide differences within each country.</p></div><div><ul><li>Life evaluations are self-reported and may reflect cultural differences in how people use the 0–10 scale.</li><li>The analysis includes 137 country observations and depends on the variables available in the 2023 dataset.</li><li>Related predictors can move together, making it difficult to isolate each factor’s contribution.</li><li>Other conditions, including inequality, education and employment, may also shape well-being.</li></ul></div></div>
 <div class="whr-conclusion"><strong>Project takeaway:</strong> GDP alone leaves substantial variation unexplained. Social support, freedom and institutional perceptions add useful information, while the model’s fit should not be read as proof of causation.</div>
 <div class="docs"><a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://github.com/lwadipeba/World-Happiness-Report/blob/main/World%20Happiness%20Report.pdf">Read paper ↗</a><a class="btn" target="_blank" rel="noopener noreferrer" href="https://github.com/lwadipeba/World-Happiness-Report/blob/main/WHR%20presentation.pptx">Access slides ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
-</div></section>
-</main>
-
-l happiness scores (R² = 0.615).</p></div>
-<div class="chart-card"><h3>Expanded model</h3><p>The expanded model explained 84.6% of the variation in national happiness scores (R² = 0.846).</p></div>
-</div>
-<div class="chart-card"><h3>Relative coefficient estimates</h3><div class="bars">
-<div class="bar-row"><span>Freedom</span><div class="track"><div class="fill" style="width:100%"></div></div><b>1.80</b></div>
-<div class="bar-row"><span>Social support</span><div class="track"><div class="fill" style="width:74%"></div></div><b>1.34</b></div>
-<div class="bar-row"><span>Lower corruption</span><div class="track"><div class="fill" style="width:62%"></div></div><b>1.11</b></div>
-<div class="bar-row"><span>Generosity</span><div class="track"><div class="fill" style="width:38%"></div></div><b>0.68</b></div>
-<div class="bar-row"><span>Life expectancy</span><div class="track"><div class="fill" style="width:38%"></div></div><b>0.68</b></div>
-<div class="bar-row"><span>GDP</span><div class="track"><div class="fill" style="width:34%"></div></div><b>0.61</b></div>
-</div></div>
-</div></section>
-<section class="project-section"><div class="wrap">
-<p class="eyebrow">Methodology</p><h2>Analysis process</h2>
-<div class="three-grid">
-<div class="info"><h3>Prepare</h3><p>Cleaned the 2023 dataset, reviewed missing values and standardized variable interpretation.</p></div>
-<div class="info"><h3>Model</h3><p>Estimated a GDP-only baseline and an expanded multivariable model with regional controls.</p></div>
-<div class="info"><h3>Evaluate</h3><p>Compared explanatory power, coefficient direction and model assumptions.</p></div>
-</div>
-<div class="callout">The findings identify associations rather than causal effects. Country-level averages may also conceal important differences within countries.</div>
-<div class="docs"><a class="btn primary" target="_blank" href="https://github.com/lwadipeba/World-Happiness-Report">View complete project ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
 </div></section>
 </main>
 
