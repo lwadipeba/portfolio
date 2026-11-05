@@ -309,9 +309,19 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
 <section class="project-section alt"><div class="wrap">
 <p class="eyebrow">Model comparison</p><h2>The expanded model accounts for more variation</h2>
 <p class="whr-intro">The GDP-only model explains 61.5% of the observed variation in country happiness scores. Adding the social, health, personal and institutional measures raises the in-sample R² to 84.6%, a 23.1 percentage-point increase.</p>
-<div class="whr-fit-chart" role="img" aria-label="Model fit comparison: GDP-only R squared 61.5 percent; expanded model R squared 84.6 percent.">
-<div class="whr-fit-row"><span class="whr-fit-label">GDP-only model</span><div class="whr-fit-track"><div class="whr-fit-fill" style="width:61.5%"></div></div><span class="whr-fit-value">61.5%</span></div>
-<div class="whr-fit-row"><span class="whr-fit-label">Expanded model</span><div class="whr-fit-track"><div class="whr-fit-fill" style="width:84.6%"></div></div><span class="whr-fit-value">84.6%</span></div>
+<div class="whr-chart-wrap">
+<svg class="whr-fit-svg" viewBox="0 0 720 155" role="img" aria-labelledby="whr-fit-title whr-fit-desc" style="display:block;width:100%;height:auto;min-width:340px">
+<title id="whr-fit-title">Model fit comparison</title>
+<desc id="whr-fit-desc">The GDP-only model has an R squared of 61.5 percent. The expanded model has an R squared of 84.6 percent.</desc>
+<g font-family="Arial, sans-serif" font-size="20" fill="#193552">
+<text x="12" y="48">GDP-only model</text><text x="12" y="104">Expanded model</text>
+</g>
+<g fill="#e8f0f7"><rect x="205" y="24" width="390" height="28" rx="14"/><rect x="205" y="80" width="390" height="28" rx="14"/></g>
+<g fill="#487fb7"><rect x="205" y="24" width="239.9" height="28" rx="14"/><rect x="205" y="80" width="329.9" height="28" rx="14"/></g>
+<g font-family="Georgia, serif" font-weight="700" font-size="22" fill="#487fb7"><text x="615" y="46">61.5%</text><text x="615" y="102">84.6%</text></g>
+<g font-family="Arial, sans-serif" font-size="14" fill="#62788d" text-anchor="middle"><text x="205" y="139">0%</text><text x="400" y="139">50%</text><text x="595" y="139">100%</text></g>
+<line x1="205" y1="116" x2="595" y2="116" stroke="#d8e6f3"/>
+</svg>
 </div>
 <p class="whr-note">R² summarizes fit in this sample; it does not show that the included conditions caused happiness. The expanded model’s adjusted R² is 83.5%.</p>
 </div></section>
