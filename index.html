@@ -64,7 +64,7 @@ section{padding:82px 0}
 .number{color:#84a2c0;font:italic 15px Georgia,serif}
 .tags{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 23px}
 .tag{padding:6px 10px;border-radius:999px;background:var(--pale);color:var(--blue);font-size:12px}
-.open{margin-top:auto;align-self:flex-start;border:0;background:none;padding:0;color:var(--blue);font-weight:700}
+.card-links{display:flex;align-items:center;gap:16px;margin-top:auto}.open{align-self:flex-start;border:0;background:none;padding:0;color:var(--blue);font-weight:700}
 .split{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
 .split p{color:var(--muted);font-size:17px}
 .resume-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}
@@ -169,7 +169,7 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
     <article class="card"><span class="number">01</span><h3>Brief Byte</h3>
       <p>An AI-powered newsletter and RSS summarizer that creates customizable five-to-ten-minute briefings.</p>
       <div class="tags"><span class="tag">NLP</span><span class="tag">Python</span><span class="tag">Streamlit</span></div>
-      <button class="open" onclick="showPage('briefbyte')">View project →</button>
+      <div class="card-links"><button class="open" onclick="showPage('briefbyte')">View project →</button><a class="open" href="https://github.com/LincolnLam1112/Newsletter-Summarizer/tree/main" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
     </article>
     <article class="card"><span class="number">02</span><h3>Determinants of Happiness</h3>
       <p>An econometric study of the financial, social and institutional factors associated with national happiness.</p>
