@@ -440,35 +440,48 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
 <section class="case-hero"><div class="wrap">
 <button class="back" onclick="goHome('work')">← Back to portfolio</button>
 <p class="eyebrow">AI Case Competition 2026 · Team C-6cess</p><h1>Pangaea</h1>
-<p class="summary">A unified AI workspace for USC MSBA students that transforms fragmented academic, career and personal signals into one clear next step.</p>
-<div class="meta"><div><span>Product</span><strong>AI student operating system</strong></div><div><span>Pilot</span><strong>Six weeks</strong></div><div><span>Core outcome</span><strong>On-time completion</strong></div></div>
-<div class="docs"><a class="btn primary" target="_blank" href="https://pangaea-music.vercel.app/home">Open prototype ↗</a><a class="btn" href="#pangaea-slides">Explore slides</a></div>
+<p class="summary">We designed Pangaea as a unified AI workspace for USC MSBA students. It brings academic, career and personal responsibilities into one daily plan, then helps each student decide what to handle first.</p>
+<div class="meta"><div><span>Audience</span><strong>USC MSBA students</strong></div><div><span>Product concept</span><strong>AI student workspace</strong></div><div><span>Proposed pilot</span><strong>Six weeks</strong></div></div>
+<div class="docs"><a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://pangaea-music.vercel.app/home">Open prototype ↗</a><a class="btn" href="#pangaea-slides">Project approach</a></div>
 </div></section>
-<section class="project-section"><div class="wrap split"><div><p class="eyebrow">The student story</p><h2>Tommy has everything he needs, but it lives in too many places.</h2></div><div><p>A reading response sits in the LMS. A problem set deadline is buried in a syllabus. A recruiter email needs a response. A case competition registration is closing. Pangaea brings these signals together, removes duplicates and recommends the most useful next action.</p><div class="callout">Every signal. One clear next step.</div></div></div></section>
+<section class="project-section"><div class="wrap split"><div><p class="eyebrow">The challenge</p><h2>Student responsibilities arrive across separate systems.</h2></div><div><p>Course deadlines may sit in an LMS or syllabus, recruiting messages arrive by email, and personal plans live somewhere else. Students move between these systems to piece together what needs attention and when.</p><p>Our team designed Pangaea to connect those signals into a useful daily plan. It considers the surrounding context so students can see what deserves attention now, what can come next and what can wait.</p><div class="callout">Every signal. One clear next step.</div></div></div></section>
 <section class="project-section alt"><div class="wrap">
-<p class="eyebrow">Directional research</p><h2>Students wanted help prioritizing, not another place to check.</h2>
-<div class="stat-grid"><div class="stat"><strong>68%</strong><small>unsure what to do next several times a week</small></div><div class="stat"><strong>72%</strong><small>dissatisfied with current organization systems</small></div><div class="stat"><strong>80%</strong><small>want prioritized academic deadlines</small></div><div class="stat"><strong>80%+</strong><small>check numerous platforms</small></div></div>
-<p style="font-size:12px">Small directional student cohort; results guide the pilot rather than represent the full student population.</p>
-<div class="three-grid" style="grid-template-columns:repeat(4,1fr)">
-<div class="info"><h3>Important Mail</h3><p>Surfaces messages that require action.</p></div><div class="info"><h3>Academics</h3><p>Prioritizes deadlines and workload.</p></div><div class="info"><h3>Career</h3><p>Tracks recruiting and networking actions.</p></div><div class="info"><h3>Personal</h3><p>Protects personal commitments and availability.</p></div>
-</div>
+<p class="eyebrow">Directional research</p><h2>Students reported difficulty deciding what to do next.</h2>
+<div class="stat-grid"><div class="stat"><strong>68%</strong><small>were unsure what to work on next several times a week</small></div><div class="stat"><strong>72%</strong><small>were dissatisfied with their current organization systems</small></div><div class="stat"><strong>80%</strong><small>wanted a prioritized list of academic deadlines</small></div><div class="stat"><strong>&gt;80%</strong><small>checked numerous platforms to keep up with deadlines and events</small></div></div>
+<p style="font-size:12px">These findings came from our USC MSBA student survey. The cohort was small, so we treat the results as directional evidence to guide the product and pilot, not as representative population estimates.</p>
 </div></section>
 <section class="project-section"><div class="wrap">
-<p class="eyebrow">AI workflow</p><h2>From fragmented information to one recommendation</h2>
-<div class="timeline"><div class="phase"><h3>Extract</h3><p>Read approved email, LMS, calendar and document sources.</p></div><div class="phase"><h3>Understand</h3><p>Clean, connect and remove duplicate signals.</p></div><div class="phase"><h3>Prioritize</h3><p>Consider deadlines, workload, availability and career relevance.</p></div><div class="phase"><h3>Act</h3><p>Recommend one next step with supporting context.</p></div></div>
-<div class="callout">The six-week analysis uses a baseline week, four live weeks and a final readout. The proposed evaluation uses intention-to-treat and difference-in-differences.</div>
+<p class="eyebrow">The product</p><h2>One workspace brings four parts of student life together.</h2>
+<p class="whr-intro">The prototype organizes information into connected areas. Shared context lets an academic deadline affect the timing of a recruiting follow-up or personal commitment.</p>
+<div class="three-grid" style="grid-template-columns:repeat(4,1fr)">
+<div class="info"><h3>Important Mail</h3><p>Surfaces messages that need a response or action.</p></div><div class="info"><h3>Academics</h3><p>Collects courses, deadlines and workload.</p></div><div class="info"><h3>Career</h3><p>Organizes recruiting tasks and role opportunities.</p></div><div class="info"><h3>Personal</h3><p>Accounts for plans, errands and available time.</p></div>
+</div>
+<div class="rule"><strong>Prototype note:</strong> The live demo is a design preview with made-up data. It shows the intended experience, not live student records or validated product performance.</div>
+</div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Context engine</p><h2>Recommendations depend on the full picture.</h2>
+<div class="timeline"><div class="phase"><h3>Extract</h3><p>Use only the sources a student approves, such as email, the LMS, calendar and syllabus documents.</p></div><div class="phase"><h3>Understand</h3><p>Clean information and combine repeated deadlines into one task.</p></div><div class="phase"><h3>Prioritize</h3><p>Weigh deadlines alongside workload, availability and career relevance.</p></div><div class="phase"><h3>Act</h3><p>Show a recommended next step with context, plus what comes after it.</p></div></div>
+<p>We designed the workflow so suggestions can be accepted, postponed or dismissed. Those choices would help us understand whether the recommendations fit students’ needs.</p>
+</div></section>
+<section class="project-section"><div class="wrap">
+<p class="eyebrow">Proposed pilot</p><h2>We planned a six-week test around student follow-through.</h2>
+<div class="three-grid">
+<div class="info"><h3>Primary measure</h3><p>On-time completion, comparing Brightspace due dates with when students mark work complete.</p></div>
+<div class="info"><h3>Supporting measures</h3><p>Time spent organizing, recommendation adoption, and the time between recruiting messages and follow-up.</p></div>
+<div class="info"><h3>Trust and wellbeing</h3><p>Track privacy and permission safeguards, stress and alert fatigue alongside product outcomes.</p></div>
+</div>
+<div class="timeline"><div class="phase"><small>Week 1</small><h3>Baseline</h3><p>Measure both groups before the pilot period.</p></div><div class="phase"><small>Weeks 2–5</small><h3>Pilot</h3><p>The Pangaea group uses the product while both groups are tracked.</p></div><div class="phase"><small>Week 6</small><h3>Readout</h3><p>Compare each group’s change against its own baseline.</p></div><div class="phase"><small>Decision</small><h3>Review</h3><p>Consider the planned statistical threshold and guardrails before scaling.</p></div></div>
+<div class="callout">This is an evaluation plan, not a report of proven impact. The proposed analysis uses intention-to-treat and difference-in-differences. The team planned to scale only if on-time completion improved at the pre-set significance threshold and no privacy or wellbeing guardrail was breached.</div>
 </div></section>
 <section id="pangaea-slides" class="project-section alt"><div class="wrap">
-<p class="eyebrow">Presentation</p><h2>Slide overview</h2>
+<p class="eyebrow">Project approach</p><h2>From a student need to a testable product plan.</h2>
 <div class="gallery">
-<div class="slide"><b>01 · The problem</b>Student life is fragmented across many systems.</div><div class="slide"><b>02 · Tommy’s day</b>Deadlines and opportunities compete for attention.</div>
-<div class="slide"><b>03 · Research</b>Students struggle to identify what to do next.</div><div class="slide"><b>04 · Product</b>Pangaea becomes a unified AI workspace.</div>
-<div class="slide"><b>05 · Modules</b>Mail, academics, career and personal priorities.</div><div class="slide"><b>06 · AI workflow</b>Extract, understand, prioritize and act.</div>
-<div class="slide"><b>07 · Prototype</b>A dashboard centered on the next best action.</div><div class="slide"><b>08 · Pilot</b>Measure completion, organization time and adoption.</div>
-<div class="slide"><b>09 · Analysis</b>Six-week controlled evaluation with clear guardrails.</div><div class="slide"><b>10 · Roadmap</b>Prototype, pilot, trusted integrations and expansion.</div>
+<div class="slide"><b>01 · Student need</b>Fragmented systems make it harder to see priorities across the week.</div><div class="slide"><b>02 · Research</b>Our MSBA survey offered directional evidence about planning and organization challenges.</div>
+<div class="slide"><b>03 · Product concept</b>A shared workspace connects mail, academics, career and personal responsibilities.</div><div class="slide"><b>04 · Recommendation logic</b>The context engine cleans duplicate signals and ranks next actions using each student’s situation.</div>
+<div class="slide"><b>05 · Evaluation</b>A six-week pilot would measure completion, organizing time, adoption and career follow-through.</div><div class="slide"><b>06 · Roadmap</b>Start with the prototype, test with an MSBA cohort, then consider trusted integrations and broader campus use.</div>
 </div>
-<div class="rule"><strong>Guardrails:</strong> opt-in, read-only access and privacy protection. Scale only if on-time completion improves without increasing stress or alert fatigue.</div>
-<div class="docs"><a class="btn primary" target="_blank" href="https://pangaea-music.vercel.app/home">Open prototype ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
+<div class="rule"><strong>Roadmap:</strong> We proposed moving from a personalized daily plan to an MSBA pilot, then to opt-in integrations with privacy controls, and later to possible use by programs and student support teams.</div>
+<div class="docs"><a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://pangaea-music.vercel.app/home">Open prototype ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
 </div></section>
 </main>
 
