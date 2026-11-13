@@ -212,6 +212,11 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
       <div class="tags"><span class="tag">AI Product Strategy</span><span class="tag">Creator Economy</span><span class="tag">UX Research</span></div>
       <button class="open" onclick="showPage('dealcheck')">View project →</button>
     </article>
+    <article class="card"><span class="number">06</span><h3>Advertising Campaign Analysis</h3>
+      <p>A PostgreSQL analysis of campaign, platform, creative and audience performance to guide more informed budget tests.</p>
+      <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL</span><span class="tag">Marketing Analytics</span></div>
+      <button class="open" onclick="showPage('adcampaign')">View project →</button>
+    </article>
   </div>
 </div>
 </section>
@@ -471,6 +476,46 @@ footer{text-align:center;padding:28px;color:var(--muted);border-top:1px solid va
 </div>
 <div class="rule"><strong>Roadmap:</strong> We proposed moving from a personalized daily plan to an MSBA pilot, then to opt-in integrations with privacy controls, and later to possible use by programs and student support teams.</div>
 <div class="docs"><a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://pangaea-music.vercel.app/home">Open prototype ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
+</div></section>
+</main>
+
+<!-- ADVERTISING CAMPAIGN ANALYSIS -->
+<main id="adcampaign" class="page">
+<section class="case-hero"><div class="wrap">
+<button class="back" onclick="goHome('work')">← Back to portfolio</button>
+<p class="eyebrow">Marketing Analytics · PostgreSQL · Budget Optimization</p><h1>Advertising Campaign Performance</h1>
+<p class="summary">I started with a practical question: what makes an advertising campaign earn attention, and when does that attention show up alongside purchase activity? By following 410,250 records across campaigns, platforms, creative formats and audiences, I turned a large event dataset into a clearer story about where performance diverges—and which ideas are worth testing next.</p>
+<div class="meta"><div><span>Database</span><strong>PostgreSQL</strong></div><div><span>Records</span><strong>410,250 across four tables</strong></div><div><span>Focus</span><strong>Performance and allocation</strong></div></div>
+<div class="docs"><a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://github.com/lwadipeba/Advertising-Campaign-Performance-Budget-Optimization-SQL">View SQL project ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
+</div></section>
+<section class="project-section"><div class="wrap">
+<p class="eyebrow">Measurement overview</p><h2>Engagement and purchase activity tell different parts of the story.</h2>
+<p class="whr-intro">I began by tracing the journey from first click to deeper engagement and purchase activity. The overall picture gave me a baseline; the more revealing part came when I compared how that journey changed from one campaign to the next.</p>
+<div class="stat-grid"><div class="stat"><strong>11.79%</strong><small>click-through rate</small></div><div class="stat"><strong>17.11%</strong><small>engagement rate</small></div><div class="stat"><strong>5.07%</strong><small>purchase events per click event</small></div><div class="stat"><strong>50</strong><small>campaigns in the source table</small></div></div>
+<p class="whr-intro">One signal did not explain the whole journey. I followed each measure separately to find where attention held, where it faded, and which campaigns stood out for a different reason.</p>
+</div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">Following the campaign story</p><h2>Attention and purchase activity pointed to different leaders.</h2>
+<div class="three-grid">
+<div class="info"><h3>Campaign 22 drew interaction</h3><p>It led engagement at 18.28%. But that momentum did not carry through to purchase activity: its purchase-to-click event rate ranked 33rd.</p></div>
+<div class="info"><h3>Campaign 27 carried further</h3><p>It recorded the strongest purchase-to-click event rate at 8.40%, while ranking 10th in engagement. The contrast showed why one headline metric could not tell the whole campaign story.</p></div>
+<div class="info"><h3>The platform pattern shifted too</h3><p>Instagram edged ahead in click-through and engagement, while Facebook showed a higher purchase-to-click event rate. The strongest channel depended on the outcome I followed.</p></div>
+</div>
+<div class="callout">The more I compared outcomes, the clearer the central takeaway became: earning attention and moving toward purchase activity are related, but they are not interchangeable. I looked beyond a single winning campaign to see how creative choices and timing shaped the same story.</div>
+</div></section>
+<section class="project-section"><div class="wrap">
+<p class="eyebrow">What happened beyond the campaign</p><h2>Creative and timing added another layer to the story.</h2>
+<div class="three-grid">
+<div class="info"><h3>Different formats, different strengths</h3><p>Video led observed engagement at 17.22%, while Stories led purchase-to-click event rate at 5.34%. The format that sparked interaction was not always the one most associated with purchase events.</p></div>
+<div class="info"><h3>Timing changed the emphasis</h3><p>Thursday afternoons led on purchase-to-click event rate; Friday afternoons led on engagement. Those contrasts point to focused scheduling tests rather than a single universal “best” time.</p></div>
+<div class="info"><h3>Keeping comparisons grounded</h3><p>When I found 50 user IDs with conflicting profile records, I set them aside for demographic comparisons so ambiguous joins would not distort the audience picture.</p></div>
+</div>
+</div></section>
+<section class="project-section alt"><div class="wrap">
+<p class="eyebrow">From findings to next steps</p><h2>The patterns became a roadmap for smarter experiments.</h2>
+<div class="timeline"><div class="phase"><h3>Build the picture</h3><p>I checked the four tables and their relationships, then brought campaign, ad and event records together in PostgreSQL.</p></div><div class="phase"><h3>Follow the signals</h3><p>Conditional aggregates and common table expressions helped trace clicks, engagement and purchase events across campaigns and segments.</p></div><div class="phase"><h3>Find the contrasts</h3><p>Window functions made it possible to rank campaigns side by side and see where engagement and purchase activity told different stories.</p></div><div class="phase"><h3>Turn insight into tests</h3><p>I’d use these patterns to shape controlled comparisons of campaign objectives, platforms, formats and timing before reallocating budget.</p></div></div>
+
+<div class="docs"><a class="btn primary" target="_blank" rel="noopener noreferrer" href="https://github.com/lwadipeba/Advertising-Campaign-Performance-Budget-Optimization-SQL">Explore SQL and documentation ↗</a><button class="btn" onclick="goHome('work')">← Back to portfolio</button></div>
 </div></section>
 </main>
 
